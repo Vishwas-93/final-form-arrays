@@ -2557,7 +2557,7 @@
     var changeValue = _ref2.changeValue,
         resetFieldState = _ref2.resetFieldState;
     changeValue(state, name, function (array) {
-      var copy = [].concat(array || []);
+      var copy = array && array.length ? cloneDeep_1(array) : [];
       copy.splice(index, 0, value);
       return copy;
     });

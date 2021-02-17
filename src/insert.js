@@ -10,7 +10,7 @@ const insert: Mutator<any> = (
   { changeValue, resetFieldState }: Tools<any>
 ) => {
   changeValue(state, name, (array: ?(any[])): any[] => {
-    const copy = [...(array || [])]
+    const copy = array && array.length ? cloneDeep(array) : []
     copy.splice(index, 0, value)
     return copy
   })
