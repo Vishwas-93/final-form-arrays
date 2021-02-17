@@ -12,7 +12,7 @@
   "scripts": {
     "start": "nps",
     "test": "nps test",
-    "precommit": "lint-staged && npm start validate"
+    "build": "lint-staged && npm start validate"
   },
   "author": "Erik Rasmussen <rasmussenerik@gmail.com> (http://github.com/erikras)",
   "license": "MIT",
