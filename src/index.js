@@ -11,6 +11,7 @@ import shift from './shift'
 import swap from './swap'
 import unshift from './unshift'
 import update from './update'
+import unshiftNew from './unshiftNew'
 
 const mutators: { [string]: Mutator<any> } = {
   insert,
@@ -23,6 +24,7 @@ const mutators: { [string]: Mutator<any> } = {
   shift,
   swap,
   unshift,
-  update
+  update,
+  unshiftNew,
 }
 export default mutators

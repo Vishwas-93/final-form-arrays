@@ -2909,6 +2909,16 @@ var update = function update(_ref, state, _ref2) {
 };
 
 //      
+var unshiftNew = function unshiftNew(_ref, state, _ref2) {
+  var name = _ref[0],
+      value = _ref[1];
+  var changeValue = _ref2.changeValue;
+  changeValue(state, name, function (array) {
+    return array ? [].concat(array.reverse(), [value]).reverse() : [value];
+  });
+};
+
+//      
 var mutators = {
   insert: insert,
   concat: concat,
@@ -2920,7 +2930,8 @@ var mutators = {
   shift: shift,
   swap: swap,
   unshift: unshift,
-  update: update
+  update: update,
+  unshiftNew: unshiftNew
 };
 
 exports.default = mutators;
