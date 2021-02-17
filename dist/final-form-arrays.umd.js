@@ -28,6 +28,7 @@
       oldState = state;
     }
 
+    console.log('state, source and dest', state, source, destKey);
     delete state.fields[source.name];
     state.fields[destKey] = _extends({}, source, {
       name: destKey,
