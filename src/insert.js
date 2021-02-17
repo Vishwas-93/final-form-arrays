@@ -14,7 +14,7 @@ const insert: Mutator<any> = (
     return copy
   })
 
-  const backup = { ...state.fields }
+  const backup = JSON.parse(JSON.stringify(state.fields))
 
   // now we have increment any higher indexes
   const pattern = new RegExp(`^${escapeRegexTokens(name)}\\[(\\d+)\\](.*)`)
@@ -24,7 +24,7 @@ const insert: Mutator<any> = (
   Object.keys(state.fields)
     .sort()
     .reverse()
-    .forEach(key => {
+    .forEach((key) => {
       const tokens = pattern.exec(key)
       if (tokens) {
         const fieldIndex = Number(tokens[1])
