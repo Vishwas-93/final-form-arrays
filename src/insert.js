@@ -2,6 +2,7 @@
 import type { MutableState, Mutator, Tools } from 'final-form'
 import moveFieldState from './moveFieldState'
 import { escapeRegexTokens } from './utils'
+import cloneDeep from 'lodash/cloneDeep'
 
 const insert: Mutator<any> = (
   [name, index, value]: any[],
@@ -14,7 +15,7 @@ const insert: Mutator<any> = (
     return copy
   })
 
-  const backup = JSON.parse(JSON.stringify(state.fields))
+  const backup = cloneDeep(state.fields)
 
   // now we have increment any higher indexes
   const pattern = new RegExp(`^${escapeRegexTokens(name)}\\[(\\d+)\\](.*)`)
