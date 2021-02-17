@@ -2907,7 +2907,7 @@
   };
 
   //      
-  var unshiftNew = function unshiftNew(_ref, state, _ref2) {
+  var unshift2 = function unshift2(_ref, state, _ref2) {
     var name = _ref[0],
         value = _ref[1];
     var changeValue = _ref2.changeValue;
@@ -2929,7 +2929,7 @@
     swap: swap,
     unshift: unshift,
     update: update,
-    unshiftNew: unshiftNew
+    unshift2: unshift2
   };
 
   exports.default = mutators;
